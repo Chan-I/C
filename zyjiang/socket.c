@@ -1,0 +1,10 @@
+int fd = socket(AFINET,SOCKSTREAM,0);
+struct sockaddr_in addr;
+memset(&addr,0,sizeof(addr));
+addr.sin_family = AF_INET;
+addr.sin_port = htons(atoi(port));
+addr.sin_addr.s_addr = inet_addr(server);
+struct timeval timeout = {1,0};
+socklen_t len = sizeof(timeout);
+ret = setsocket(fd,SOL_SOCKET,SO_SND_TIMEO,&timeout,len);
+ret = (connect(fd,(struct socketaddr*)&addr,sizeof(addr) ) );

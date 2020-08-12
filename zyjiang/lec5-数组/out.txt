@@ -1,0 +1,2 @@
+78
+This file (the project file) contains information at the project level and
