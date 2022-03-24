@@ -1,32 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 // INCLUDES
-#include <stdio.h>
-#include <stdlib.h>
-
-////////////////////////////////////////////////////////////////////////////////
-// MACROS: CONSTANTS
-
-////////////////////////////////////////////////////////////////////////////////
-// DATA STRUCTURES
-struct node
-{
-    int data;
-    struct node *next;
-    struct node *pre;
-} * head, *tail, *tmp;
+#include "include.h";
 
 ////////////////////////////////////////////////////////////////////////////////
 // GLOBAL VARIABLES
 int count;
-
-////////////////////////////////////////////////////////////////////////////////
-// FORWARD DECLARATIONS
-void create();
-void enque(int x);
-int deque();
-int peek();
-int size();
-int isEmpty();
 
 ////////////////////////////////////////////////////////////////////////////////
 // MAIN ENTRY POINT
@@ -52,14 +30,14 @@ void enque(int x)
 {
     if (head == NULL)
     {
-        head = (struct node *)malloc(1 * sizeof(struct node));
+        head = (struct node *)malloc(sizeof(struct node));
         head->data = x;
         head->pre = NULL;
         tail = head;
     }
     else
     {
-        tmp = (struct node *)malloc(1 * sizeof(struct node));
+        tmp = (struct node *)malloc(sizeof(struct node));
         tmp->data = x;
         tmp->next = tail;
         tail = tmp;

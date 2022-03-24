@@ -26,7 +26,7 @@ Return Codes
 
 */
 
-#include "CArray.h"
+#include "carray.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -100,6 +100,8 @@ int updateValueCArray(CArray *array, int position, int value)
     {
         if (array->array[position] != 0)
         {
+            array->array[position] = value;
+            return SUCCESS;
         }
 
         else
